@@ -1,0 +1,118 @@
+:root{
+    --white      : #e8e8e9;
+    --black      : #171819;
+    --grey       : #2B2C2E;
+    --blue       : #4683F7;
+    --orange     : #E9755E;
+    --green-aqua : #C7F1FF;
+    --shippori   : 'Shippori Antique', sans-serif;
+    --open-sans  : 'Open Sans', sans-serif;
+    --raleway    : 'Raleway', sans-serif;
+}
+
+.body{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--grey);
+    color: var(--white);
+    font-family: var(--raleway);
+}
+
+/* ========================SideBar======================== */
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 5em;
+    height: 100vh;
+    position: sticky;
+    padding: 1em;
+    background-color: var(--black);
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.logo__h2{
+    display: none;
+}
+
+.logo__icon{
+    font-size: 2em;
+}
+
+.sidebar__list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    gap: 1em;
+}
+
+.sidebar__list--config{
+    margin-top: auto;
+}
+
+.sidebar__item{
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar__link{
+    text-decoration: none;
+    color: var(--white);
+    transition: all .3s ease;
+}
+
+.sidebar__link:hover{
+    color: var(--blue);
+}
+
+.sidebar__icon{
+    font-size: 1.7em;
+}
+
+.sidebar__label{
+    display: none;
+}
+
+/* ========================Main======================== */
+
+.main{
+    width: calc(100vw - 5em);
+    background-color: yellow;
+    overflow-y: scroll;
+}
+
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1em;
+
+}
+
+.caja1, .caja2, .caja3, .caja4, .caja5, .caja6, .caja7,
+.caja8, .caja9, .caja10{
+    width: 15em;
+    height: 15em;
+    background-color: #4683F7;
+}
+
+/* ========================Media querys======================== */
+
+@media screen and (min-width: 768px) {
+
+    
+}
