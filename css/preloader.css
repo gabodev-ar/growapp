@@ -110,3 +110,26 @@
         transform: scale(1);
     }
 }
+
+
+/* <div class="preloader d-flex flex-column justify-content-center align-items-center">
+
+<div class="preloade-box d-flex flex-column justify-content-center align-items-center">
+  
+    <div class="preloader-logo d-flex justify-content-center align-items-center">
+        <ul class="preloader-ul nav d-flex flex-column">
+            <li class="preloader-li">GrowApp</li>
+            <li class="preloader-li">orden</li>
+            <li class="preloader-li">control</li>
+            <li class="preloader-li">crecimiento</li>
+        </ul>
+    </div>
+  
+    <div class="preloader-dots d-flex justify-content-center align-items-center">
+        <span class="preloader-dot"></span>
+        <span class="preloader-dot"></span>
+        <span class="preloader-dot"></span>
+    </div>
+</div>
+</div> */
+

@@ -26,10 +26,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-self: center;
     width: 5em;
     height: 100vh;
     position: sticky;
-    padding: 1em;
+    padding: 2em 1em;
     background-color: var(--black);
 }
 
@@ -37,7 +38,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 2em;
+    padding-bottom: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid var(--grey);
 }
 
 .logo__h2{
@@ -46,6 +49,7 @@
 
 .logo__icon{
     font-size: 2em;
+    color: var(--orange);
 }
 
 .sidebar__list{
@@ -64,32 +68,43 @@
 
 .sidebar__item{
     display: flex;
+    position: relative;
     justify-content: center;
+    align-items: center;
 }
 
 .sidebar__link{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    color: var(--white);
+    padding: .5em 0;
     transition: all .3s ease;
+    color: var(--orange);
+    border-radius: .5em;
+    *border: 1px solid yellow;
 }
 
 .sidebar__link:hover{
-    color: var(--blue);
+    background-color: var(--orange);
+    color: var(--white);
 }
 
 .sidebar__icon{
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 .sidebar__label{
     display: none;
 }
-
 /* ========================Main======================== */
 
 .main{
     width: calc(100vw - 5em);
-    background-color: yellow;
+    background-color: var(--grey);
     overflow-y: scroll;
 }
 
