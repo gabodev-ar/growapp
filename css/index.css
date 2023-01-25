@@ -19,8 +19,9 @@
     width: 100vw;
     height: 100vh;
     background-color: var(--grey);
-    color: var(--white);
+    color: var(--black-3);
     font-family: var(--raleway);
+    font-weight: 600;
 }
 
 /* ========================SideBar======================== */
@@ -36,7 +37,7 @@
     padding: 2em 1em;
     background-color: var(--white);
     border-right: 1px solid var(--grey-2);
-    box-shadow: 10px 4px 70px 10px rgba(0, 0, 0, 0.05);    
+    box-shadow: 10px 4px 70px 10px rgba(0, 0, 0, 0.05);  
 }
 
 .logo{
@@ -104,6 +105,7 @@
 .sidebar__label{
     display: none;
 }
+
 /* ========================Main======================== */
 
 .main{
@@ -132,6 +134,32 @@
 /* ========================Media querys======================== */
 
 @media screen and (min-width: 768px) {
+    .sidebar{
+        width: 15em;
+        padding: 2em;
+    }
 
-    
+    .logo{
+        justify-content: start;
+        gap: 1em;
+    }
+
+    .logo__h2{
+        display: flex;
+        align-items: center;
+    }
+
+    .sidebar__link{
+        flex-direction: row;
+        justify-content: start;
+        gap: 1em;
+    }
+
+    .sidebar__label{
+        display: flex;
+    }
+
+    .main{
+        width: calc(100vw - 15em);
+    }
 }
