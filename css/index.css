@@ -1,13 +1,11 @@
 :root{
     --white      : #FFFFFF;
-    --grey-1     : #F5F5F5;
-    --grey-2     : #C8C8C8;
-    --black-1    : #171819;
-    --black-2    : #2B2C2E;
-    --black-3    : #5A5A5C; 
-    --blue       : #4683F7;
-    --orange     : #E9755E;
-    --green-aqua : #C7F1FF;
+    --black      : #171819;
+    --background : #F1F1F1;
+    --primary    : #4683F7;
+    --title      : #171819;
+    --paragraph  : #5A5A5C; 
+    --shadow     : #D8D8D8;
     --shippori   : 'Shippori Antique', sans-serif;
     --open-sans  : 'Open Sans', sans-serif;
     --raleway    : 'Raleway', sans-serif;
@@ -18,10 +16,10 @@
     grid-template-columns: repeat(2, max-content);
     width: 100vw;
     height: 100vh;
-    background-color: var(--grey);
-    color: var(--black-3);
+    color: var(--paragraph);
     font-family: var(--raleway);
     font-weight: 600;
+    overflow: hidden;
 }
 
 /* ========================SideBar======================== */
@@ -36,7 +34,7 @@
     position: sticky;
     padding: 2em 1em;
     background-color: var(--white);
-    border-right: 1px solid var(--grey-2);
+    border-right: 1px solid var(--shadow);
     box-shadow: 10px 4px 70px 10px rgba(0, 0, 0, 0.05);  
 }
 
@@ -46,7 +44,7 @@
     width: 100%;
     padding-bottom: 1.5em;
     margin-bottom: 1.5em;
-    border-bottom: 1px solid var(--grey-2);
+    border-bottom: 1px solid var(--shadow);
 }
 
 .logo__h2{
@@ -55,7 +53,7 @@
 
 .logo__icon{
     font-size: 2em;
-    color: var(--black-2);
+    color: var(--title);
 }
 
 .sidebar__list{
@@ -89,13 +87,12 @@
     text-decoration: none;
     padding: .5em 0;
     transition: all .3s ease;
-    color: var(--black-3);
+    color: var(--paragraph);
     border-radius: .5em;
-    *border: 1px solid yellow;
 }
 
 .sidebar__link:hover{
-    color: var(--blue);
+    color: var(--primary);
 }
 
 .sidebar__icon{
@@ -112,19 +109,15 @@
     display: flex;
     width: 100%;
     height: 6em;
-    background-color: var(--grey-1);
-    *position: fixed;
-    *top: 0;
-    *right: 0;
-    *border-bottom: 1px solid var(--grey-2);
+    background-color: var(--background);
 }
 
-.form{
+.search{
     width: 90%;
     margin: auto;
 }
 
-.form__wrapper{
+.search__wrapper{
     display: flex;
     width: 100%;
     position: relative;
@@ -132,28 +125,27 @@
     box-shadow: 4px 10px 20px 4px rgba(0, 0, 0, 0.02);
 }
 
-.form__input{
+.search__input{
     width: 100%;
     padding: .8em 1em;
     border: none;
-    border-bottom: 1px solid var(--grey-2);
+    border-bottom: 1px solid var(--shadow);
     outline: none;
-    *border-radius: .5em;
 }
 
-.form__input::-webkit-search-decoration,
-.form__input::-webkit-search-cancel-button,
-.form__input::-webkit-search-results-button,
-.form__input::-webkit-search-results-decoration{
+.search__input::-webkit-search-decoration,
+.search__input::-webkit-search-cancel-button,
+.search__input::-webkit-search-results-button,
+.search__input::-webkit-search-results-decoration{
     display: none;
 }
 
-.form__button{
+.search__button{
     background-color: transparent;
     border: none;
     position: absolute;
     right: 1em;
-    color: var(--black3);
+    color: var(--paragraph);
     cursor: pointer;
     padding: 0;
 }
@@ -166,22 +158,23 @@
     display: flex;
     justify-content: center;
     width: calc(100vw - 5em);
+    height: 4em;
     position: absolute;
     bottom: 0;
-    right: 0;
     background-color: var(--white);
+    border-top: 1px solid var(--shadow);
+    transition: all .5s ease-in-out;
+    z-index: 2;
+}
+
+.nav--active{
+    height: 18em;
 }
 
 .nav__wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.nav__picture{
-    width: 3em;
-    height: 3em;
     position: relative;
 }
 
@@ -196,15 +189,61 @@
 .nav__data{
     display: flex;
     gap: 1em;
+    margin-top: 2em;
+    cursor: pointer;
 }
 
+.nav__icon--active{
+    transform: rotate(180deg);
+}
+
+.list{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.list__li{
+    padding: .5em 1em;
+}
+
+.list__link{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    text-decoration: none;
+    color: inherit;
+}
+
+.list__link:hover{
+    color: var(--primary);
+}
+
+/* ========================Cover======================== */
+
+.cover{
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #171819ad;
+    position: absolute;
+    z-index: 1;
+    transition: opacity .5s ease-in-out;
+}
+
+.cover--active{
+    visibility: visible;
+    opacity: 1;
+}
 /* ========================Main======================== */
 
 .main{
     width: calc(100vw - 5em);
-    background-color: var(--grey-1);
+    background-color: var(--background);
     overflow-y: scroll;
-    *border: 2px solid red;
 }
 
 .hero{
@@ -225,6 +264,13 @@
 }
 
 /* ========================Media querys======================== */
+/* @media screen and (max-width: 500px){
+    .nav--active{
+        transform: translateY(65vh);
+    }
+} */
+
+
 
 @media screen and (min-width: 768px) {
     .sidebar{
@@ -252,7 +298,65 @@
         display: flex;
     }
     
-    .main, .nav{
+    .main{
         width: calc(100vw - 15em);
+    }
+
+    .header{
+        padding: 0 2em;
+        align-items: center;
+    }
+
+    .search{
+        width: 40%;
+    }
+
+    .nav{
+        width: unset;
+        height: unset;
+        transform: unset;
+        position: unset;
+        background-color: unset;
+        border: unset;
+    }
+
+    .nav__wrapper{
+        flex-direction: row;
+        gap: 3em;
+    }
+
+    .nav__img{
+        position: unset;
+        top: unset;
+    }
+
+    .nav__data{
+        height: 100%;
+        padding: 0 2em;
+        align-items: center;
+        margin-top: unset;
+        background-color: var(--white);
+        position: relative;
+    }
+
+    .list{
+        width: 12.39em;
+        display: block;
+        position: absolute;
+        background-color: var(--white);
+        top: 1.5em;
+        right: 0;
+        padding: 1em 0;
+        visibility: visible;
+        opacity: 1;
+        transition: clip-path .5s ease-in-out;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .list--active{
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
 }

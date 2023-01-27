@@ -88,12 +88,14 @@
     
 
     <main class="main">
+        <div class="cover"></div>
+        
         <header class="header">
-            <form class="header__form form"> 
-                <div class="form__wrapper"> 
-                    <input class="form__input" id="search" type="search" placeholder="Buscar alumno . . .">
-                    <button class="form__button" type="search">
-                        <i class="form__icon bi bi-search"></i> 
+            <form class="header__search search"> 
+                <div class="search__wrapper"> 
+                    <input class="search__input" id="search" type="search" placeholder="Buscar alumno . . .">
+                    <button class="search__button" type="search">
+                        <i class="search__icon bi bi-search"></i> 
                     </button>
                 </div> 
             </form>
@@ -101,19 +103,48 @@
             <nav class="nav">
                 <div class="nav__wrapper">
 
-                    <div class="nav__picture">
-                        <img class="nav__img" src="assets/img/susana-perez-profile.webp" alt="Foto de perfil">
-                    </div>
+                    <img class="nav__img" src="assets/img/susana-perez-profile.webp" alt="Foto de perfil">
 
                     <div class="nav__data">
                         <h4 class="nav__h4">Susana Perez</h4>
                         <i class="nav__icon bi bi-chevron-up"></i>
                     </div>
+
+                    <ul class="nav__list list">
+                        <li class="list__li">
+                            <a class="list__link" href="">
+                                <i class="list__icon bi bi-person"></i>
+                                <p class="list__label">Mi perfil</p>
+                            </a>
+                        </li>
+
+                        <li class="list__li">
+                            <a class="list__link" href="">
+                                <i class="list__icon bi bi-patch-check"></i>
+                                <p class="list__label">Mi suscripción</p>
+                            </a>
+                        </li>
+
+                        <li class="list__li">
+                            <a class="list__link" href="">
+                                <i class="list__icon bi bi-key"></i>
+                                <p class="list__label">Contraseña</p>
+                            </a>
+                        </li>
+
+                        <li class="list__li">
+                            <a class="list__link" href="">
+                                <i class="list__icon bi bi-box-arrow-left"></i>
+                                <p class="list__label">Log out</p>
+                            </a>
+                        </li>
+
+                    </ul>
                     
                 </div>
             </nav> 
         </header>
-        
+
         <div class="hero">
             <div class="caja1">Caja 1</div>
             <div class="caja2">Caja 2</div>

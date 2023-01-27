@@ -1,1 +1,1 @@
-import {} from "./loader.js";
+import "./header.js";
