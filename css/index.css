@@ -106,12 +106,105 @@
     display: none;
 }
 
+/* ========================Header======================== */
+
+.header{
+    display: flex;
+    width: 100%;
+    height: 6em;
+    background-color: var(--grey-1);
+    *position: fixed;
+    *top: 0;
+    *right: 0;
+    *border-bottom: 1px solid var(--grey-2);
+}
+
+.form{
+    width: 90%;
+    margin: auto;
+}
+
+.form__wrapper{
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    box-shadow: 4px 10px 20px 4px rgba(0, 0, 0, 0.02);
+}
+
+.form__input{
+    width: 100%;
+    padding: .8em 1em;
+    border: none;
+    border-bottom: 1px solid var(--grey-2);
+    outline: none;
+    *border-radius: .5em;
+}
+
+.form__input::-webkit-search-decoration,
+.form__input::-webkit-search-cancel-button,
+.form__input::-webkit-search-results-button,
+.form__input::-webkit-search-results-decoration{
+    display: none;
+}
+
+.form__button{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 1em;
+    color: var(--black3);
+    cursor: pointer;
+    padding: 0;
+}
+
+
+/**
+    Nav
+*/
+.nav{
+    display: flex;
+    justify-content: center;
+    width: calc(100vw - 5em);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--white);
+}
+
+.nav__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__picture{
+    width: 3em;
+    height: 3em;
+    position: relative;
+}
+
+.nav__img{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    position: absolute;
+    top: -1.5em;
+}
+
+.nav__data{
+    display: flex;
+    gap: 1em;
+}
+
 /* ========================Main======================== */
 
 .main{
     width: calc(100vw - 5em);
     background-color: var(--grey-1);
     overflow-y: scroll;
+    *border: 2px solid red;
 }
 
 .hero{
@@ -121,7 +214,7 @@
     align-items: center;
     width: 100%;
     gap: 1em;
-
+    margin-top: 4em;
 }
 
 .caja1, .caja2, .caja3, .caja4, .caja5, .caja6, .caja7,
@@ -158,8 +251,8 @@
     .sidebar__label{
         display: flex;
     }
-
-    .main{
+    
+    .main, .nav{
         width: calc(100vw - 15em);
     }
 }
