@@ -15,11 +15,9 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     width: 100vw;
-    height: 100vh;
     color: var(--paragraph);
     font-family: var(--raleway);
     font-weight: 600;
-    overflow: hidden;
 }
 
 /* ========================SideBar======================== */
@@ -31,7 +29,8 @@
     align-self: center;
     width: 5em;
     height: 100vh;
-    position: sticky;
+    position: fixed;
+    bottom: 0;
     padding: 2em 1em;
     background-color: var(--white);
     border-right: 1px solid var(--shadow);
@@ -159,7 +158,7 @@
     justify-content: center;
     width: calc(100vw - 5em);
     height: 4em;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background-color: var(--white);
     border-top: 1px solid var(--shadow);
@@ -239,9 +238,14 @@
     opacity: 1;
 }
 /* ========================Main======================== */
+.main::-webkit-scrollbar {
+    display: none;
+}
 
 .main{
-    width: calc(100vw - 5em);
+    width: calc(100% - 5em);
+    position: absolute;
+    right: 0;
     background-color: var(--background);
     overflow-y: scroll;
 }
@@ -299,7 +303,7 @@
     }
     
     .main{
-        width: calc(100vw - 15em);
+        width: calc(100% - 15em);
     }
 
     .header{
