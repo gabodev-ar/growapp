@@ -4,6 +4,7 @@
     --background : #F1F1F1;
     --primary    : #4683F7;
     --warning    : #de4e32;
+    --success    : #88b979;
     --title      : #171819;
     --paragraph  : #5A5A5C; 
     --shadow     : #D8D8D8;
@@ -164,7 +165,7 @@
     background-color: var(--white);
     border-top: 1px solid var(--shadow);
     transition: all .5s ease-in-out;
-    z-index: 2;
+    z-index: 3;
 }
 
 .nav--active{
@@ -190,7 +191,7 @@
 .nav__data{
     display: flex;
     gap: 1em;
-    margin-top: 2em;
+    margin-top: 1.5em;
     cursor: pointer;
 }
 
@@ -240,7 +241,7 @@
     height: 100%;
     background-color: #171819ad;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     transition: all .5s ease-in-out;
 }
 
@@ -270,12 +271,79 @@
     width: 90%;
     gap: 1em;
     margin: auto;
+    margin-bottom: 10em;
 }
 
-.title{
+.hero__title{
     width: 100%;
     padding: .5em 0;
     font-size: 1.5em;
+}
+
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 2em;
+}
+
+.cards__card{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 15em;
+    height: 15em;
+    background-color: var(--white);
+    margin-bottom: 1px solid var(--shadow);
+    box-shadow: 4px 10px 20px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.cards__icon{
+    font-size: 18em;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    color: var(--primary);
+    opacity: .2;
+    z-index: 1;
+    position: absolute;
+    right: .1em;
+}
+
+.cards__icon--inactives{
+    color: var(--warning);
+}
+
+.cards__icon--actives{
+    color: var(--success);
+}
+
+.cards__texts{
+    display: flex;
+    width: inherit;
+    height: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index: 2;
+    gap: 1em;
+}
+
+.cards__number{
+    font-size: 8em;
+    font-weight: 700;
+    line-height: .8em;
+    vertical-align: text-top;
+    *border: 1px solid red;
+}
+
+.cards__label{
+    margin-top: 1em;
 }
 
 /* ========================Media querys======================== */
@@ -396,5 +464,9 @@
     .notification__icon{
         top: 1em;
         right: 1em;
+    }
+
+    .cards{
+        justify-content: start;
     }
 }
