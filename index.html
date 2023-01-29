@@ -149,32 +149,59 @@
 
             <h2 class="hero__title">Dashboard</h2>
 
-            <div class="hero__cards cards">
-                <div class="cards__card cards__card--total">
-                    <div class="cards__texts">
-                        <span class="cards__number">95</span>
-                        <span class="cards__label">Total de alumnos</span>
+            <div class="statistics">
+                <div class="statistics__header">
+                    <div class="statistics__title">
+                        <span class="statistics__label">Estadísticas de Alumnos</span>
+                        <i class="statistics__icon bi bi-bar-chart-line"></i>
                     </div>
-                    <i class="cards__icon bi bi-people-fill"></i>
-                </div>
 
-                <div class="cards__card cards__card--actives">
-                    <div class="cards__texts">
-                        <span class="cards__number">67</span>
-                        <span class="cards__label">Alumnos activos</span>
-                    </div>
-                    <i class="cards__icon cards__icon--actives bi bi-person-check-fill"></i>
-                </div>
+                    <div class="statistics__data">
+                        <div class="statistics__box">
+                            <span class="statistics__circle"></span>
+                            <span class="statistics__label">Alumnos activos</span>
+                        </div>
 
-                <div class="cards__card cards__card--inactives">
-                    <div class="cards__texts">
-                        <span class="cards__number">28</span>
-                        <span class="cards__label">Alumnos inactivos</span>
+                        <div class="statistics__box">
+                            <span class="statistics__relation">75/90</span>
+                            <span class="statistics__percentage">67.5%</span>
+                        </div>
                     </div>
-                    <i class="cards__icon cards__icon--inactives bi bi-person-x-fill"></i>
+
+                    <div class="statistics__data">
+                        <div class="statistics__box">
+                            <span class="statistics__circle statistics__circle--inactives"></span>
+                            <span class="statistics__label">Alumnos inactivos</span>
+                        </div>
+
+                        <div class="statistics__box">
+                            <span class="statistics__relation">15/90</span>
+                            <span class="statistics__percentage">32.5%</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="statistics__graphics">
+                    <!-- variable --percentage a modificar con php -->
+                    <div class="statistics__box" style="--percentage: 67.5"> 
+                        <svg class="statistics__spinner">
+                            <circle class="statistics__circle" r="75" cx="50%" cy="50%" pathlength="100"/>
+                            <circle class="statistics__circle statistics__circle--active" r="75" cx="50%" cy="50%" pathlength="100"/>
+                        </svg>
+                        <span class="statistics__value">67.5%</span>
+                    </div>
+
+                    <!-- variable --percentage a modificar con php -->
+                    <div class="statistics__box" style="--percentage: 32.5"> 
+                        <svg class="statistics__spinner">
+                            <circle class="statistics__circle" r="75" cx="50%" cy="50%" pathlength="100"/>
+                            <circle class="statistics__circle statistics__circle--inactive" r="75" cx="50%" cy="50%" pathlength="100"/>
+                        </svg>
+                        <span class="statistics__value">32.5%</span>
+                    </div>
                 </div>
             </div>
-
+            
         </div>
     </main>
 
