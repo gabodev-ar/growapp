@@ -147,8 +147,6 @@
 
         <div class="hero">
 
-            <h2 class="hero__title">Dashboard</h2>
-
             <div class="statistics">
                 <div class="statistics__header">
                     <div class="statistics__title">
@@ -199,6 +197,38 @@
                         </svg>
                         <span class="statistics__value">32.5%</span>
                     </div>
+                </div>
+            </div>
+
+            <div class="todolist">
+                <div class="todolist__header">
+                    <i class="todolist__icon bi bi-journal-text"></i>
+                    <input class="todolist__search" type="text" name="todolist-search" id="todolist-search" placeholder="Agregar una nueva tarea">
+                </div>
+
+                <div class="todolist__filter">
+                    <span class="todolist__span">Todo</span>
+                    <span class="todolist__span">Pendientes</span>
+                    <span class="todolist__span">Completados</span>
+                    <button class="todolist__button">Limpiar todo</button>
+                </div>
+
+                <div class="todolist__lists lists">
+                    <div class="lists__alert">
+                        <span class="lists__span">No hay tareas por completar</span>
+                        <i class="lists__icon bi bi-emoji-laughing"></i>
+                    </div>
+                    <ul class="lists__ul">
+                        <li class="lists__li">
+                            <label class="lists__label" for="">
+                                <div class="lists__box">
+                                    <input class="lists__checkbox" type="checkbox" name="" id="">
+                                    <p class="lists__todo">Tarea por cumplir</p>
+                                </div>
+                                <i class="lists__icon bi bi-three-dots"></i>
+                            </label>
+                        </li>
+                    </ul>
                 </div>
             </div>
             

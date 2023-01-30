@@ -410,6 +410,129 @@
     font-weight: 700;
 }
 
+/* ========================Todolist======================== */
+
+.todolist{
+    width: 100%;
+    padding: 2em;
+    color: var(--paragraph);
+    background-color: var(--white);
+}
+
+.todolist__header{
+    width: 100%;
+    position: relative;
+}
+
+.todolist__search{
+    width: 100%;
+    padding: .5em 1em .5em 3em;
+    border: 1px solid var(--paragraph);
+    outline: none;
+    background-color: transparent;
+    z-index: 2;
+}
+
+.todolist__icon{
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    margin-left: .5em;
+    font-size: 1.4em;
+    z-index: 1;
+}
+
+.todolist__filter{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em 0;
+    gap: 1em;
+    align-items: center;
+    border-bottom: 1px solid var(--shadow);
+}
+
+.todolist__span{
+    cursor: pointer;
+}
+
+.todolist__span:hover{
+    color: var(--primary);
+}
+
+.todolist__button{
+    padding: .5em 1em;
+    border: none;
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: .4em;
+    cursor: pointer;
+}
+
+.todolist__button:hover{
+    *background-color: #7ba9ff;
+}
+
+.lists{
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+}
+
+.lists__alert{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+    justify-content: center;
+    color: var(--shadow);
+}
+
+.lists__icon{
+    font-size: 1.5em;
+}
+
+.lists__ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em 0;
+}
+
+.lists__li{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.lists__label{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lists__box{
+    display: flex;
+    align-items: center;
+}
+
+.lists__checkbox{
+    width: 1em;
+    height: 1em;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.lists__todo{
+}
+
+.lists__icon{
+    cursor: pointer;
+}
+
 /* ========================Media querys======================== */
 
 @media screen and (min-width: 768px) {
