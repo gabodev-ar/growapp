@@ -424,13 +424,17 @@
     position: relative;
 }
 
-.todolist__search{
+.todolist__input{
     width: 100%;
-    padding: .5em 1em .5em 3em;
-    border: 1px solid var(--paragraph);
+    padding: 1em 1em 1em 3em;
+    border: 1px solid var(--shadow);
     outline: none;
     background-color: transparent;
     z-index: 2;
+}
+
+.todolist__input::placeholder{
+    color: var(--shadow);
 }
 
 .todolist__icon{
@@ -442,6 +446,7 @@
     margin-left: .5em;
     font-size: 1.4em;
     z-index: 1;
+    color: var(--shadow);
 }
 
 .todolist__filter{
@@ -455,6 +460,7 @@
 
 .todolist__span{
     cursor: pointer;
+    font-size: .9em;
 }
 
 .todolist__span:hover{
@@ -468,6 +474,7 @@
     color: var(--white);
     border-radius: .4em;
     cursor: pointer;
+    font-size: .9em;
 }
 
 .todolist__button:hover{
@@ -477,13 +484,14 @@
 .lists{
     display: flex;
     flex-direction: column;
-    padding: 1em 0;
+    padding-top: 1em;
 }
 
 .lists__alert{
     display: flex;
     flex-direction: row;
     gap: 1em;
+    padding: 1em 0 0 0;
     align-items: center;
     justify-content: center;
     color: var(--shadow);
@@ -493,29 +501,29 @@
     font-size: 1.5em;
 }
 
-.lists__ul{
+.lists__tasks{
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 1em 0;
+    padding: 0;
 }
 
-.lists__li{
+.lists__task{
     display: flex;
     width: 100%;
     justify-content: space-between;
+    padding: 1em 0;
+    border-bottom: 1px solid var(--shadow);
+}
+
+.lists__task:first-child{
+    padding: 0 0 1em 0;
 }
 
 .lists__label{
     display: flex;
     width: 100%;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.lists__box{
-    display: flex;
     align-items: center;
 }
 
@@ -526,13 +534,53 @@
     cursor: pointer;
 }
 
-.lists__todo{
-}
-
 .lists__icon{
     cursor: pointer;
 }
 
+.setting{
+    position: relative;
+}
+
+.setting__dots{
+    cursor: pointer;
+}
+
+.setting__menu{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style: none;
+    padding: 1em;
+    gap: 1em;
+    background-color: var(--white);
+    border: 1px solid var(--shadow);
+    font-size: .9em;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .1s ease-in-out;
+    z-index: 1;
+}
+
+.setting:hover .setting__menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+.setting__menu li{
+    cursor: pointer;
+}
+
+.setting__menu li:hover{
+    color: var(--primary);
+}
+
+.setting__icon{
+    margin-right: .5em;
+}
 /* ========================Media querys======================== */
 
 @media screen and (min-width: 768px) {
@@ -567,12 +615,16 @@
     }
 
     .header{
-        padding: 0 2em;
+        width: 90%;
+        padding: unset;
         align-items: center;
+        justify-content: space-between;
+        margin: auto;
     }
 
     .search{
         width: 40%;
+        margin: 0;
     }
 
     .nav{
@@ -586,7 +638,7 @@
 
     .nav__wrapper{
         flex-direction: row;
-        gap: 3em;
+        gap: 1em;
         font-size: unset;
     }
 
