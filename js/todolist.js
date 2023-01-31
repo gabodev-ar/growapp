@@ -6,77 +6,91 @@ const settingMenu = document.querySelector('.setting__menu');
 let todos         = JSON.parse(localStorage.getItem('todo-list'));
 
 
-function showTodos(){
+function showTodos() {
 
-    let li = '';
+    let liTag = '';
 
-    todos.forEach((todo, id) => {
-        
-        li += `
-        <li class="lists__task">
-            <label class="lists__label" for="${id}">
-                <input class="lists__checkbox" type="checkbox" name="checkbox" id="${id}">
-                <p class="lists__todo">${todo.name}</p>
-            </label>
+    if (todos) {
+        todos.forEach((todo, id) => {
 
-            <div class="lists__setting setting">
-                <i class="setting__dots bi bi-three-dots"></i>
-                <ul class="setting__menu">
-                    <li class="setting__edit">
-                        <i class="setting__icon bi bi-pencil"></i>
-                        Editar
-                    </li>
-                    <li class="setting__delete">
-                        <i class="setting__icon bi bi-trash3"></i>
-                        Eliminar
-                    </li>
-                </ul>
-            </div>
-        </li>
-        `;
+            let completed = todo.status == 'completed' ? 'checked' : '';
+            
+            liTag += `
+                <li class="lists__task">
+                    <label class="lists__label" for="${id}">
+                        <input onclick="updateStatus(this)" class="lists__checkbox" type="checkbox" id="${id}" ${completed}>
+                        <p class="lists__todo ${completed}">${todo.name}</p>
+                    </label>
+    
+                    <div class="lists__setting setting">
+                        <i class="setting__dots bi bi-three-dots"></i>
+                        <ul class="setting__menu">
+                            <li class="setting__edit">
+                                <i class="setting__icon bi bi-pencil"></i>
+                                Editar
+                            </li>
+                            <li onclick="deleteTask(${id})" class="setting__delete">
+                                <i class="setting__icon bi bi-trash3"></i>
+                                 Eliminar
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                `;
 
-        listTask.innerHTML = li;
-    });
-}
+        });
 
-function strikeOutParagraph(){
+    }
 
-    let checkbox = document.querySelectorAll('.lists__checkbox');
+    todos == '' ? listsAlert.style.display = 'flex' : listsAlert.style.display = 'none';
 
-    checkbox.forEach((checkbox) => {
-        
-        checkbox.addEventListener('click', ()=>{
-
-            checkbox.parentNode.lastElementChild.classList.toggle('strike-out');
-
-        } )
-
-    });
+    listTask.innerHTML = liTag;
 
 }
 
+function updateStatus(selectedTask){
+    
+    selectedTask.parentNode.lastElementChild.classList.toggle('checked');
+    selectedTask.checked ? todos[selectedTask.id].status = 'completed' : todos[selectedTask.id].status = 'pending';
+    localStorage.setItem('todo-list', JSON.stringify(todos));
 
-input.addEventListener('keyup', (e)=>{
+}
+
+window.updateStatus = updateStatus;
+
+
+function deleteTask(taskId){
+
+    todos.splice(taskId, 1);
+    localStorage.setItem('todo-list', JSON.stringify(todos));
+    showTodos();
+
+}
+
+window.deleteTask = deleteTask;
+
+
+input.addEventListener('keyup', (e) => {
 
     e.preventDefault();
     let userTask = input.value.trim();
 
-    if(e.key == "Enter" && userTask){
+    if (e.key == "Enter" && userTask) {
 
-        if(!todos){
+        if (!todos) {
 
             todos = [];
 
-        }else{
+        } else {
 
             input.value = '';
-            let taskInfo = {name : userTask, status : 'pending'};
+            let taskInfo = { name: userTask, status: 'pending' };
             todos.push(taskInfo);
             localStorage.setItem('todo-list', JSON.stringify(todos));
-            listsAlert.style.display = 'none';
             showTodos();
-            strikeOutParagraph();
-
         }
     }
 })
+
+
+

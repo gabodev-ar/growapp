@@ -534,7 +534,7 @@
     cursor: pointer;
 }
 
-.strike-out{
+.checked{
     text-decoration: line-through;
 }
 
