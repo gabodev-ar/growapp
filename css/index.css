@@ -534,6 +534,10 @@
     cursor: pointer;
 }
 
+.strike-out{
+    text-decoration: line-through;
+}
+
 .lists__icon{
     cursor: pointer;
 }

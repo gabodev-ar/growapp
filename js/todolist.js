@@ -15,7 +15,7 @@ function showTodos(){
         li += `
         <li class="lists__task">
             <label class="lists__label" for="${id}">
-                <input onclick="strikeOutParagraph(this)" class="lists__checkbox" type="checkbox" name="checkbox" id="${id}">
+                <input class="lists__checkbox" type="checkbox" name="checkbox" id="${id}">
                 <p class="lists__todo">${todo.name}</p>
             </label>
 
@@ -40,10 +40,20 @@ function showTodos(){
 }
 
 function strikeOutParagraph(){
-    console.log('ok');
-}
 
-strikeOutParagraph();
+    let checkbox = document.querySelectorAll('.lists__checkbox');
+
+    checkbox.forEach((checkbox) => {
+        
+        checkbox.addEventListener('click', ()=>{
+
+            checkbox.parentNode.lastElementChild.classList.toggle('strike-out');
+
+        } )
+
+    });
+
+}
 
 
 input.addEventListener('keyup', (e)=>{
@@ -65,6 +75,7 @@ input.addEventListener('keyup', (e)=>{
             localStorage.setItem('todo-list', JSON.stringify(todos));
             listsAlert.style.display = 'none';
             showTodos();
+            strikeOutParagraph();
 
         }
     }
