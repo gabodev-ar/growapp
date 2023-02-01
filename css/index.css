@@ -3,7 +3,7 @@
     --black      : #171819;
     --background : #f2f6fe; /* #F1F1F1; */
     --primary    : #4683F7;
-    --warning    : #de4e32;
+    --warning    : #ff5757;
     --success    : #88b979;
     --title      : #171819;
     --paragraph  : #5A5A5C; 
@@ -463,18 +463,28 @@
     font-size: .9em;
 }
 
+.active{
+    color: var(--primary);
+}
+
 .todolist__span:hover{
     color: var(--primary);
 }
 
 .todolist__button{
+    display: flex;
     padding: .5em 1em;
     border: none;
-    background-color: var(--primary);
-    color: var(--white);
     border-radius: .4em;
+    background-color: var(--warning);
+    color: var(--white);
     cursor: pointer;
     font-size: .9em;
+    gap: .5em;
+}
+
+.todolist__button:hover{
+    background-color: #ff3d3d;
 }
 
 .todolist__button:hover{

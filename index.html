@@ -207,15 +207,18 @@
                 </div>
 
                 <div class="todolist__filter">
-                    <span class="todolist__span">Todo</span>
-                    <span class="todolist__span">Pendientes</span>
-                    <span class="todolist__span">Completados</span>
-                    <button class="todolist__button">Limpiar todo</button>
+                    <span class="todolist__span active" id="all">Todo</span>
+                    <span class="todolist__span" id="pending">Pendientes</span>
+                    <span class="todolist__span" id="completed">Completados</span>
+                    <button class="todolist__button" id="deleteAll">
+                        Eliminar tareas
+                        <i class="bi bi-trash3"></i>
+                    </button>
                 </div>
 
                 <div class="todolist__lists lists">
                     <div class="lists__alert">
-                        <span class="lists__span">No hay tareas por completar</span>
+                        <span class="lists__span">No hay tareas por aquí</span>
                         <i class="lists__icon bi bi-emoji-laughing"></i>
                     </div>
 
