@@ -18,8 +18,8 @@
     grid-template-columns: repeat(2, max-content);
     width: 100vw;
     color: var(--paragraph);
-    font-family: var(--raleway);
-    font-weight: 600;
+    font-family: var(--shippori);
+    font-weight: 400;
 }
 
 /* ========================SideBar======================== */
@@ -381,10 +381,11 @@
 .todolist__input{
     width: 100%;
     padding: 1em 1em 1em 3em;
-    border: 1px solid var(--shadow);
+    border: 1.8px solid var(--shadow);
     outline: none;
     background-color: transparent;
     z-index: 2;
+    line-height: 1em;
 }
 .todolist__input::placeholder{
     color: var(--shadow);
@@ -445,9 +446,11 @@
     align-items: center;
     justify-content: center;
     color: var(--shadow);
+    cursor: auto;
 }
 .lists__icon{
     font-size: 1.5em;
+    cursor: auto;
 }
 .lists__tasks{
     display: flex;
@@ -479,9 +482,6 @@
 }
 .checked{
     text-decoration: line-through;
-}
-.lists__icon{
-    cursor: pointer;
 }
 .setting{
     position: relative;
@@ -565,10 +565,11 @@
         position: unset;
         background-color: unset;
         border: unset;
+        gap: 1em;
     }
     .nav__wrapper{
+        width: max-content;
         flex-direction: row;
-        gap: 1em;
         font-size: unset;
     }
     .nav__img{
@@ -577,6 +578,7 @@
     }
     .nav__data{
         height: 100%;
+        width: 100%;
         padding: 0 2em;
         align-items: center;
         margin-top: unset;
@@ -586,19 +588,22 @@
     }
     .list{
         display: flex;
-        width: 12.39em;
+        width: 100%;
         height: unset;
         position: absolute;
         background-color: var(--white);
         top: 1.5em;
         right: 0;
-        padding: 1em 0;
+        padding: 1.5em 1em;
         gap: 1em;
         margin: 2em 0 0 0;
         visibility: visible;
         opacity: 1;
         transition: clip-path .5s ease-in-out;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    .list__li{
+        padding: unset;
     }
     .list--active{
         transform: translateY(0);

@@ -12,9 +12,11 @@ let editTaskId;
 
 //====== showTodos ========
 function showTodos(filter) {
-
     let liTag = '';
-
+    let alertTag = `<li class="lists__alert">
+                        <p class="lists__todo">No hay tareas por aquí</p>
+                        <i class="lists__icon bi bi-emoji-laughing"></i>
+                    </li>`;
     if (todos) {
 
         todos.forEach((todo, id) => {
@@ -48,22 +50,17 @@ function showTodos(filter) {
             }
         });
     }
-
-    todos == '' ? listsAlert.style.display = 'flex' : listsAlert.style.display = 'none';
-
-    listTask.innerHTML = liTag;
-
+    // todos == '' ? listsAlert.style.display = 'flex' : listsAlert.style.display = 'none';
+    listTask.innerHTML = liTag || alertTag;
 }
 
 showTodos('all');
 
 //====== updateStatus ========
 function updateStatus(selectedTask) {
-
     selectedTask.parentNode.lastElementChild.classList.toggle('checked');
     selectedTask.checked ? todos[selectedTask.id].status = 'completed' : todos[selectedTask.id].status = 'pending';
     localStorage.setItem('todo-list', JSON.stringify(todos));
-
 }
 
 window.updateStatus = updateStatus;
@@ -71,11 +68,9 @@ window.updateStatus = updateStatus;
 
 //====== deleteTask ========
 function deleteTask(taskId, filter) {
-
     todos.splice(taskId, 1);
     localStorage.setItem('todo-list', JSON.stringify(todos));
     showTodos(filter);
-
 }
 
 window.deleteTask = deleteTask;
@@ -124,22 +119,18 @@ input.addEventListener('keyup', (e) => {
                 todos = [];
 
             }
-
             let taskInfo = { name: userTask, status: 'pending' };
             todos.push(taskInfo);
 
         } else { //Si isEditTask es verdadero habilita la posibilida de sobreescribir
             //un nuevo valor en el índice seleccionado del array todos.
-
             todos[editTaskId].name = userTask;
             input.value = '';
             isEditTask = false;
         }
-
         input.value = '';
         localStorage.setItem('todo-list', JSON.stringify(todos));
         showTodos('all');
-
     }
 })
 
