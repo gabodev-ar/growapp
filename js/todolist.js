@@ -1,12 +1,12 @@
-const input = document.getElementById('todolist-input');
-const listTask = document.querySelector('.lists__tasks');
-const listsAlert = document.querySelector('.lists__alert');
+const input       = document.getElementById('todolist-input');
+const listTask    = document.querySelector('.lists__tasks');
+const listsAlert  = document.querySelector('.lists__alert');
 const settingDots = document.querySelector('.setting__dots');
 const settingMenu = document.querySelector('.setting__menu');
-const deleteAll = document.getElementById('deleteAll');
-const filters = document.querySelectorAll('.todolist__span');
-let todos = JSON.parse(localStorage.getItem('todo-list'));
-let isEditTask = false;
+const deleteAll   = document.getElementById('deleteAll');
+const filters     = document.querySelectorAll('.todolist__span');
+let todos         = JSON.parse(localStorage.getItem('todo-list'));
+let isEditTask    = false;
 let editTaskId;
 
 

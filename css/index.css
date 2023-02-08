@@ -119,6 +119,7 @@
     border: none;
     border-bottom: 1px solid var(--shadow);
     outline: none;
+    position: relative;
 }
 .search__input::-webkit-search-decoration,
 .search__input::-webkit-search-cancel-button,
@@ -134,6 +135,34 @@
     color: var(--paragraph);
     cursor: pointer;
     padding: 0;
+}
+.search__results{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 3.5em;
+    padding: 1em 0;
+    background-color: var(--white);
+    border: 1px solid red;
+    z-index: 2;
+    opacity: 1;
+    transition: clip-path .5s ease-in-out;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path .5s ease-in-out;
+}
+.search__results--active{
+    opacity: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.search__result{
+    list-style: none;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.search__result:hover{
+    background-color: var(--shadow);
 }
 
 /**
@@ -241,7 +270,7 @@
     justify-content: center;
     align-items: center;
     width: 90%;
-    gap: 1em;
+    gap: 2em;
     margin: auto;
     margin-bottom: 10em;
 }
@@ -373,6 +402,8 @@
     padding: 2em;
     color: var(--paragraph);
     background-color: var(--white);
+    border-bottom: 1px solid var(--shadow);
+    box-shadow: 8px 10px 30px 5px rgba(0, 0, 0, 0.05);
 }
 .todolist__header{
     width: 100%;
@@ -549,10 +580,11 @@
     }
     .header{
         width: 90%;
+        height: unset;
         padding: unset;
         align-items: center;
         justify-content: space-between;
-        margin: auto;
+        margin: 2em auto;
     }
     .search{
         width: 40%;
@@ -592,12 +624,11 @@
         height: unset;
         position: absolute;
         background-color: var(--white);
-        top: 1.5em;
+        top: 3.5em;
         right: 0;
         padding: 1.5em 1em;
         gap: 1em;
-        margin: 2em 0 0 0;
-        visibility: visible;
+        margin: unset;
         opacity: 1;
         transition: clip-path .5s ease-in-out;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -606,8 +637,6 @@
         padding: unset;
     }
     .list--active{
-        transform: translateY(0);
-        visibility: visible;
         opacity: 1;
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
